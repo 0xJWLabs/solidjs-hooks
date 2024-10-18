@@ -1,6 +1,6 @@
 {
   "name": "@solidjs-hooks/solidjs-hooks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "0xJWLabs <0xJWLabs@gmail.com>",
   "contributors": [],
@@ -37,7 +37,10 @@
         "types": "./dist/index.d.ts",
         "default": "./dist/server.js"
       },
-      "require": "./dist/server.cjs"
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/server.cjs"
+      }
     },
     "browser": {
       "development": {
@@ -45,46 +48,64 @@
           "types": "./dist/index.d.ts",
           "default": "./dist/dev.js"
         },
-        "require": "./dist/dev.cjs"
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/dev.cjs"
+        }
       },
       "import": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
       },
-      "require": "./dist/index.cjs"
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "deno": {
       "import": {
         "types": "./dist/index.d.ts",
         "default": "./dist/server.js"
       },
-      "require": "./dist/server.cjs"
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/server.cjs"
+      }
     },
     "node": {
       "import": {
         "types": "./dist/index.d.ts",
         "default": "./dist/server.js"
       },
-      "require": "./dist/server.cjs"
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/server.cjs"
+      }
     },
     "development": {
       "import": {
         "types": "./dist/index.d.ts",
         "default": "./dist/dev.js"
       },
-      "require": "./dist/dev.cjs"
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/dev.cjs"
+      }
     },
     "import": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
-    "require": "./dist/index.cjs"
+    "require": {
+      "types": "./dist/index.d.cts",
+      "default": "./dist/index.cjs"
+    }
   },
   "typesVersions": {},
   "scripts": {
     "dev": "vite serve dev",
     "build": "tsup",
-    "prepublish": "bun run build",
+    "prepublishOnly": "bun run build",
     "test": "concurrently pnpm:test:*",
     "test:client": "vitest",
     "test:ssr": "vitest --mode=ssr",
